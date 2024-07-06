@@ -116,6 +116,6 @@ io.on('connection', (socket) => {
 });
 
 const port = process.env.PORT || 8080;
-server.listen(port, '0.0.0.0', function () {
-  console.log(`Listening on http://0.0.0.0:${port}`);
+server.listen(8080,  function () {
+  console.log('Listening on http://0.0.0.0:8080');
 });
