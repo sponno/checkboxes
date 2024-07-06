@@ -15,7 +15,7 @@ import {
 //   ? 'https://seashell-app-zjonr.ondigitalocean.app'
 //   : 'http://localhost:5001';
 
-const SOCKET_URL = 'https://seashell-app-zjonr.ondigitalocean.app:443';
+const SOCKET_URL = 'https://seashell-app-zjonr.ondigitalocean.app';
 const generateClientId = () => 'client_' + Math.random().toString(36).substr(2, 9);
 
 const GameBoard = () => {
@@ -32,6 +32,7 @@ const GameBoard = () => {
   const connectSocket = useCallback(() => {
     const newSocket = io(SOCKET_URL, {
       transports: ['websocket'],
+      secure: true,
       upgrade: false,
       reconnectionAttempts: 5,
       reconnectionDelay: 1000,

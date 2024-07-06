@@ -7,7 +7,7 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "*",
     methods: ["GET", "POST"]
   }
 });
@@ -115,5 +115,7 @@ io.on('connection', (socket) => {
   });
 });
 
-const port = process.env.PORT || 5001;
-server.listen(port, () => console.log(`Server running on port ${port}`));
+const port = process.env.PORT || 8080;
+server.listen(port, '0.0.0.0', function () {
+  console.log(`Listening on http://0.0.0.0:${port}`);
+});
