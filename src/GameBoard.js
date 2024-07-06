@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 
 const SOCKET_URL = process.env.NODE_ENV === 'production'
-  ? 'https://checkedout.app'
+  ? 'https://seashell-app-zjonr.ondigitalocean.app'
   : 'http://localhost:5001';
 
 const generateClientId = () => 'client_' + Math.random().toString(36).substr(2, 9);
